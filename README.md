@@ -12,7 +12,7 @@ Quick & dirty example for a Docker workshop.
 
 ## Dockerfile
 
-An example `Dockerfile` can be found in `dockerfile`.
+We want to build a Docker image with a Postgres database. An example `Dockerfile` can be found in the directory `dockerfile`.
 
 ## Build Docker image
 
@@ -78,13 +78,12 @@ To stop and remove the container use
 
 ## Do it with Maven
 
-Got to the directory `maven-project` for an example Maven project that builds the same image.
-
-We use the `dockerfile-maven-plugin` from Spotify to build images in our software.
+Got to the directory `maven-project` for an example project that builds the same image, but with Maven.
+We use the `dockerfile-maven-plugin` from Spotify to build images in our software. Do not confuse it with the `docker-maven-plugin`!
 
 To build the image run
 
-    maven clean install
+    mvn clean install
 
 *Q: what's the name and tag of the new image?*
 
