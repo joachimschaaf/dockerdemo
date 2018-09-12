@@ -17,6 +17,11 @@
     <inceptionYear>2018</inceptionYear>
     
     <properties>
+        <jdbc.user>dockerdemo</jdbc.user>
+        <jdbc.password>dockerdemo</jdbc.password>
+        <jdbc.database>dockerdemo</jdbc.database>
+        <jdbc.url>jdbc:postgresql://localhost:5432/${jdbc.database}</jdbc.url>
+
         <docker.repository>hub.1worldsync.de</docker.repository>
         <image.db>1worldsync/demo-postgres</image.db>
 
@@ -26,7 +31,6 @@
         <dockerfile.contextDirectory>${project.build.directory}/docker</dockerfile.contextDirectory>
         <dockerfile.tag>${docker.tag}</dockerfile.tag>
         <skip.export.docker.images>true</skip.export.docker.images>
-
     </properties>
 
     <build>
@@ -52,33 +56,6 @@
 
         <defaultGoal>process-resources</defaultGoal>
         <plugins>
-	    <!--
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>copy</goal>
-                        </goals>
-                        <phase>process-resources</phase>
-                        <id>copy</id>
-                    </execution>
-                </executions>
-                <configuration>
-                    <artifactItems>
-                        <artifactItem>
-                            <groupId>com.oneworldsync.uma.psql</groupId>
-                            <artifactId>ap_pgutils</artifactId>
-                            <version>20171207</version>
-                            <classifier>alpine</classifier>
-                            <type>tgz</type>
-                            <outputDirectory>${project.build.directory}/docker</outputDirectory>
-                        </artifactItem>
-                    </artifactItems>
-                </configuration>
-            </plugin>
-	    -->
             <plugin>
                 <groupId>com.spotify</groupId>
                 <artifactId>dockerfile-maven-plugin</artifactId>
@@ -111,7 +88,6 @@
                         <writeTestMetadata>false</writeTestMetadata>
                     </configuration>
                 </plugin>
-
             </plugins>
         </pluginManagement>
 

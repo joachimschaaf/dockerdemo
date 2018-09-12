@@ -1,0 +1,22 @@
+version: '2'
+
+services:
+    postgres:
+        image: ${docker.repository}/${image.db}:${docker.tag}
+        labels:
+            io.rancher.container.pull_image: always
+        hostname:
+            postgres
+        environment:
+            - DATABASE=${jdbc.database}
+            - DBUSER=${jdbc.user}
+            - DBPASSWORD=${jdbc.password}
+        expose:
+            - "5432"
+        ports:
+            - "5432"
+        volumes:
+            - pglocaldata:/var/lib/postgresql/data
+
+volumes:
+  pglocaldata:
