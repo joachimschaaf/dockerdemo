@@ -9,8 +9,9 @@ Quick & dirty example for a Docker workshop.
 - Docker hub login
 - Push image
 - Start and stop a container with docker-compose
+- Build with Maven
 
-*Q*uestions to test your knowledge start with a Q.
+*Questions to test your knowledge start with a Q.*
 
 ## Dockerfile
 
@@ -80,7 +81,7 @@ To stop and remove the container use
 
 ## Do it with Maven
 
-Got to the directory `maven-project` for an example project that builds the same image, but with Maven.
+Go to the directory `maven-project` for an example project that builds the same image, but with Maven.
 We use the `dockerfile-maven-plugin` from Spotify to build images in our software. Do not confuse it with the `docker-maven-plugin`!
 
 To build the image run
