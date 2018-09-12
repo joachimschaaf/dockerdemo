@@ -3,6 +3,7 @@ version: '2'
 services:
     postgres:
         image: myimage
+        #image: hub.1worldsync.de/demo-myuserid/myimage
         hostname:
             postgres
         environment:
