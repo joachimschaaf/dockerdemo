@@ -10,6 +10,8 @@ Quick & dirty example for a Docker workshop.
 - Push image
 - Start and stop a container with docker-compose
 
+*Q*uestions to test your knowledge start with a Q.
+
 ## Dockerfile
 
 We want to build a Docker image with a Postgres database. An example `Dockerfile` can be found in the directory `dockerfile`.
@@ -23,7 +25,7 @@ To build a new image from the Dockerfile, run the following command:
 
 *Q: what does the `-t` parameter? What is the `.` for?*
 
-The builds a new image with the name and tag `myimage:latest`. The new image can be found with 
+This builds a new image with the name and tag `myimage:latest`. The new image can be found with 
 
     docker images
 
