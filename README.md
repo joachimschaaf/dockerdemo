@@ -52,6 +52,16 @@ with the registry and push the image:
     docker tag demo-<My_Userid>/myimage hub.1worldsync.de/demo-<My_Userid>/myimage
     docker push hub.1worldsync.de/demo-<My_Userid>/myimage
 
+## Start a container
+
+To start the container using docker-compose, use
+
+    docker-compose up -d
+
+Check the status with `docker ps` or `docker-compose ps`. To stop and remove the container use
+
+    docker-compose down
+
 ## Do it with Maven
 
 Got to the directory `maven-project` for an example Maven project that builds the same image.
@@ -64,15 +74,5 @@ To build the image run
     
 The image will be built as hub.1worldsync.de/1worldsync/demo-postgres:1.0.0-SNAPSHOT
 
-
-## Start a container
-
-To start the container using docker-compose, use
-
-    docker-compose up -d
-
-To stop and remove the container use
-
-    docker-compose down
 
 
