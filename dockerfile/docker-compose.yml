@@ -1,0 +1,20 @@
+version: '2'
+
+services:
+    postgres:
+        image: myimage
+        hostname:
+            postgres
+        environment:
+            - DATABASE=dockerdemo
+            - DBUSER=dockerdemo
+            - DBPASSWORD=dockerdemo
+        expose:
+            - "5432"
+        ports:
+            - "5432"
+        volumes:
+            - pglocaldata:/var/lib/postgresql/data
+
+volumes:
+  pglocaldata:
