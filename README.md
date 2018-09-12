@@ -4,19 +4,26 @@ Quick & dirty example for a Docker workshop.
 
 **Contents:**
 
-- create Dockerfile
-- build Docker image
+- Create/edit Dockerfile
+- Build Docker image
 - Docker hub login
-- push image
-- start and stop a container with docker-compose
+- Push image
+- Start and stop a container with docker-compose
 
 ## Dockerfile
 
-text
+An example `Dockerfile` can be found in `src/main/docker`.
 
 ## Build Docker image
 
-text
+To build a new image from the Dockerfile, run the following command:
+
+    docker build -t myimage .
+
+The builds a new image with the name (tag) `myimage`. The new image can be found with 
+
+    docker images
+
 
 ## Docker hub login
 
@@ -33,7 +40,13 @@ text
 
 ## Do it with Maven
 
-text
+We use the `dockerfile-maven-plugin` from Spotify to build images in our software.
+
+To build the image run
+
+    maven clean install
+    
+The image will be built as hub.1worldsync.de/1worldsync/demo-postgres:1.0.0-SNAPSHOT
 
 
 ## Start a container
