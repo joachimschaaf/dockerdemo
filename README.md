@@ -12,33 +12,49 @@ Quick & dirty example for a Docker workshop.
 
 ## Dockerfile
 
-An example `Dockerfile` can be found in `src/main/docker`.
+An example `Dockerfile` can be found in `dockerfile`.
 
 ## Build Docker image
 
 To build a new image from the Dockerfile, run the following command:
 
+    cd dockerfile
     docker build -t myimage .
 
 The builds a new image with the name (tag) `myimage`. The new image can be found with 
 
     docker images
 
-
 ## Docker hub login
 
-To access our private Docker hub (or registry), a login is required.
+Per default, Docker images are *pulled* from the central Docker hub (https://hub.docker.com/).
+For example, get the latest ubuntu with
+    
+    docker pull ubuntu
+
+To access our private Docker hub (or registry), a login is required:
+
+    docker login hub.1worldsync.de
 
 If you just want to download images, the 'readonly' user is sufficient, but if
-you want to push (upload) the images you have built you have to login with
+you want to *push* (upload) the images you have built you have to login with
 a user with write access. Use the user 'docker' in this case. Passwords are
 provided privately :-)
 
-## Push image
+## Tag and Push image
 
-text
+To publish a previously built Docker image, it has to be tagged and pushed to the registry.
+
+Tag the image with your Linux username so we can all push our own image. Then tag it
+with the registry and push the image:
+
+    docker tag myimage demo-<My_Userid>/myimage
+    docker tag demo-<My_Userid>/myimage hub.1worldsync.de/demo-<My_Userid>/myimage
+    docker push hub.1worldsync.de/demo-<My_Userid>/myimage
 
 ## Do it with Maven
+
+Got to the directory `maven-project` for an example Maven project that builds the same image.
 
 We use the `dockerfile-maven-plugin` from Spotify to build images in our software.
 
