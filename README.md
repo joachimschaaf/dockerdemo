@@ -17,7 +17,7 @@ Quick & dirty example for a Docker workshop.
 
 We want to build a Docker image with a Postgres database. An example `Dockerfile` can be found in the directory `dockerfile`.
 
-*Q: what does the ENV command? Why multiple lines with \ ?*
+*Q: where does the base image come from? What does the ENV command? Why multiple lines with \ ?*
 
 ## Build Docker image
 
@@ -28,18 +28,18 @@ To build a new image from the Dockerfile, run the following command:
 
 *Q: what does the `-t` parameter? What is the `.` for?*
 
-This builds a new image with the name and tag `myimage:latest`. The new image can be found with 
+This builds a new image with the name `myimage` and tag `latest` (the default tag). The new image can be found with 
 
     docker images
 
 ## Docker hub login
 
 Per default, Docker images are *pulled* from the central Docker hub (https://hub.docker.com/).
-For example, get the latest ubuntu with
+For example, get the latest Alpine Linux with
     
-    docker pull ubuntu
+    docker pull alpine
 
-*Q: how to search for Docker images?*
+*Q: how to search for Docker images? How to get a specific version?*
 
 To access our private Docker hub (or registry), a login is required:
 
@@ -67,7 +67,11 @@ with the registry and push the image:
 
 ## Start a container
 
-To start the container using docker-compose, use
+The new image can be used to start a new container. Use the `docker run` command!
+
+*Q: on which port does the Postgres database run? Try to connect! How to stop the container?*
+
+It is easier to run a container with docker-compose. A `docker-compose.yml`file is required. To start the container using docker-compose, use
 
     docker-compose up -d
 
