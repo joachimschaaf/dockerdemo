@@ -105,4 +105,4 @@ To build the image run
 
 [Docker compose reference](https://docs.docker.com/compose/compose-file/compose-file-v2/)
 
-
+[Spotify Dockerfile Maven plugin](https://github.com/spotify/dockerfile-maven)
