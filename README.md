@@ -1,6 +1,6 @@
 # Docker workshop
 
-Quick & dirty example for a Docker workshop.
+Some introductory usage examples for the Docker workshop.
 
 **Contents:**
 
