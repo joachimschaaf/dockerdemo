@@ -97,4 +97,12 @@ To build the image run
 *Q: what's the name and tag of the new image?*
 
 
+## References
+
+[Docker documentation](https://docs.docker.com/)
+
+[Dockerfile reference](https://docs.docker.com/engine/reference/builder/)
+
+[Docker compose reference](https://docs.docker.com/compose/compose-file/compose-file-v2/)
+
 
