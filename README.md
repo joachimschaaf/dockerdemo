@@ -63,7 +63,7 @@ with the registry and push the image:
     docker tag demo-<My_Userid>/myimage hub.1worldsync.de/demo-<My_Userid>/myimage
     docker push hub.1worldsync.de/demo-<My_Userid>/myimage
 
-*Q: does every tag get a new image id? How to check? How to delete a tag?*
+*Q: does every tag get a new image id? How to check? How to delete a tag and how is that different from deleting an image?*
 
 ## Start a container
 
