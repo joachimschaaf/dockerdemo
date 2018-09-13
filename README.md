@@ -17,6 +17,8 @@ Quick & dirty example for a Docker workshop.
 
 We want to build a Docker image with a Postgres database. An example `Dockerfile` can be found in the directory `dockerfile`.
 
+*Q: what does the ENV command? Why multiple lines with \ ?*
+
 ## Build Docker image
 
 To build a new image from the Dockerfile, run the following command:
