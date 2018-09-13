@@ -1,0 +1,62 @@
+version: "2"
+
+services:
+  activemq:
+    image: rmohr/activemq:5.14.3
+    hostname: activemq
+    expose:
+      - "8161"
+      - "61616"
+
+  elasticsearch:
+    image: hub.1worldsync.de/elasticsearch/elasticsearch:1.7.5-1
+    hostname: elasticsearch
+    expose:
+      - "9200"
+      - "9300"
+
+  oracledb:
+    image: hub.1worldsync.de/1worldsync/db-orcl-publishing-fmcg-medium:develop-latest
+    labels:
+      io.rancher.container.pull_image: always
+    hostname: oracledb
+    expose:
+      - "5500"
+      - "1521"
+
+  gpcpredict:
+    image: hub.1worldsync.de/1worldsync/gpc-prediction:3.1.0
+    hostname: gpcpredict
+    expose:
+      - "8000"
+
+  publishing:
+    image: hub.1worldsync.de/1worldsync/publishing:${pimVersion}
+    hostname: publishing
+    labels:
+      io.rancher.container.pull_image: always
+    environment:
+      - WS_PROFILE=comeu300wf-fmcg
+      - WS_DB_USER=ws_data
+      - WS_DB_PASSWORD=ws_data
+      - WS_DB_CONNECT_STRING=jdbc:oracle:thin:@//oracledb:1521/ORCLPDB1
+      - WS_USE_ELASTICSEARCH=true
+      - WS_USE_GPC_PREDICTION=true
+      - WS_ADMIN_PASSWORD=admin
+      - WS_GDSN_MESSAGE_SENDER=4049111200929
+      - WS_SOURCE_DATA_POOL_GLN=4049111100007
+      - WS_SMTP_HOST=fra1lns2p.1worldsync.com
+      - WS_SMTP_FROM=noreply@1worldsync.com
+      - WS_SMTP_STARTTLS=true
+    expose:
+      - "8080"
+      - "22"
+    volumes:
+      # needed to have enough entropy for things like connect to oracle.
+      - "/dev/urandom:/dev/urandom"
+    depends_on:
+      - activemq
+      - elasticsearch
+      - oracledb
+      - gpcpredict
+
