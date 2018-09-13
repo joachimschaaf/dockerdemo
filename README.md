@@ -77,7 +77,7 @@ It is easier to run a container with docker-compose. A `docker-compose.yml`file 
 
 Check the status with `docker ps` or `docker-compose ps` and check the logs.
 
-*Q: on which port is the Postgres database from the example running? `expose`and `ports` - where's the difference? How to run the database on port 9999?*
+*Q: on which port is the Postgres database running? `expose`and `ports` - where's the difference? How to run the database on port 9999?*
 
 To stop and remove the container use
 
