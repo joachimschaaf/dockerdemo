@@ -1,9 +1,9 @@
 FROM postgres:10.3-alpine
 LABEL author.name="Joachim Schaaf"
 
-ENV DBUSER=dockerdemo
-ENV DBPASSWORD=dockerdemo
-ENV DATABASE=dockerdemo
+ENV DBUSER=dockerdemo \
+    DBPASSWORD=dockerdemo \
+    DATABASE=dockerdemo
 
 COPY createdb.sh /docker-entrypoint-initdb.d/
 
