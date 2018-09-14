@@ -79,7 +79,13 @@ Check the status with `docker ps` or `docker-compose ps` and check the logs.
 
 *Q: on which port is the Postgres database running? `expose`and `ports` - where's the difference? How to run the database on port 9999?*
 
-To stop and remove the container use
+## Stop the container 
+
+A running container can be stopped with the 'docker stop' command.
+
+*Q: does the container still exist after the stop command?*
+
+To stop and remove the container that was started with docker-compose use
 
     docker-compose down
 
