@@ -9,6 +9,7 @@ Some introductory usage examples for the Docker workshop.
 - Docker hub login
 - Push image
 - Start and stop a container with docker-compose
+- Containers, data and volumes
 - Build with Maven
 
 *Questions to test your knowledge start with a Q.*
@@ -79,6 +80,20 @@ Check the status with `docker ps` or `docker-compose ps` and check the logs.
 
 *Q: on which port is the Postgres database running? `expose`and `ports` - where's the difference? How to run the database on port 9999?*
 
+## Containers, data and volumes
+
+After a container has been started, the data that is created is stored in the container filesystem. 
+To store data outside of the container, host directories can be mounted or Docker volumes, a kind of data container, can be used. Volumes are the preferred solution!
+
+We want to create a file in the container. This can be done by running a shell in the container with the 'exec' command:
+
+    docker exec -ti myimg ash
+    touch /test.txt
+    exit
+    
+*Q: now stop the container - does the file still exist? Start the container again and check it! Stop and remove the container, then start it again: does the file still exist?*
+
+
 ## Stop the container 
 
 A running container can be stopped with the 'docker stop' command.
@@ -89,7 +104,7 @@ To stop and remove the container that was started with docker-compose use
 
     docker-compose down
 
-*Q: what's the difference of `docker stop` and `docker down`?*
+*Q: what's the difference of `docker-compose stop` and `docker-compose down`?*
 
 ## Do it with Maven
 
