@@ -80,6 +80,22 @@ Check the status with `docker ps` or `docker-compose ps` and check the logs.
 
 *Q: on which port is the Postgres database running? `expose`and `ports` - where's the difference? How to run the database on port 9999?*
 
+## Stop the container 
+
+A running container can be stopped with the 'docker stop' command.
+
+*Q: does the container still exist after the stop command?*
+
+To stop and remove the container that was started with docker-compose use
+
+    docker-compose down
+
+*Q: what's the difference of `docker-compose stop` and `docker-compose down`?*
+
+## Delete images and containers
+
+text
+
 ## Containers, data and volumes
 
 After a container has been started, the data that is created is stored in the container filesystem. 
@@ -93,18 +109,9 @@ We want to create a file in the container. This can be done by running a shell i
     
 *Q: now stop the container - does the file still exist? Start the container again and check it! Stop and remove the container, then start it again: does the file still exist?*
 
+The Postgres image uses a volume to store the data of the database. You can find the configuration in the 'docker-compose.yml' file. A container directory is mounted to the volume.
 
-## Stop the container 
-
-A running container can be stopped with the 'docker stop' command.
-
-*Q: does the container still exist after the stop command?*
-
-To stop and remove the container that was started with docker-compose use
-
-    docker-compose down
-
-*Q: what's the difference of `docker-compose stop` and `docker-compose down`?*
+*Q: where is the volume ?*
 
 ## Do it with Maven
 
