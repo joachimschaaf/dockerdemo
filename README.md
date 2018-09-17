@@ -65,7 +65,7 @@ with the registry and push the image:
     docker tag demo-<My_Userid>/myimage hub.1worldsync.de/demo-<My_Userid>/myimage
     docker push hub.1worldsync.de/demo-<My_Userid>/myimage
 
-*Q: does every tag get a new image id? How to check? How to delete a tag and how is that different from deleting an image?*
+*Q: does every tag get a new image id? How to check?*
 
 ## Start a container
 
@@ -83,11 +83,11 @@ Check the status with `docker ps` or `docker-compose ps` and check the logs.
 
 ## Stop the container 
 
-A running container can be stopped with the 'docker stop' command.
+A running container can be stopped with the `docker stop` command.
 
 *Q: does the container still exist after the stop command?*
 
-To stop and remove the container that was started with docker-compose use
+To stop and remove the container that was started with `docker-compose` use
 
     docker-compose down
 
@@ -95,7 +95,11 @@ To stop and remove the container that was started with docker-compose use
 
 ## Delete images and containers
 
-text
+Docker _images_ are removed with the `docker rmi`command, _containers_ are removed with `docker rm`.
+
+Add some additional tags for your image `myimgage` with `docker tag`. Then delete them again, use the tag and the image id as parameter. 
+
+*Q: how to delete a tag and how is that different from deleting an image?*
 
 ## Containers, data and volumes
 
