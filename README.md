@@ -43,7 +43,7 @@ For example, get the latest Alpine Linux with
 
 *Q: how to search for Docker images? How to get a specific version?*
 
-To access our private Docker hub (or registry), a login is required:
+To access our private Docker hub (or registry), a 21eecdfb4a54login is required:
 
     docker login hub.1worldsync.de
 
@@ -104,7 +104,7 @@ Add some additional tags for your image `myimgage` with `docker tag`. Then delet
 ## Containers, data and volumes
 
 After a container has been started, the data that is created is stored in the container filesystem. 
-To store data outside of the container, host directories can be mounted or Docker volumes, a kind of data container, can be used. Volumes are the preferred solution!
+To store data outside of the container, host directories can be mounted or Docker _volumes_, a kind of data container, can be used. Volumes are the preferred solution!
 
 We want to create a file in the container. This can be done by running a shell in the container with the 'exec' command:
 
@@ -114,9 +114,9 @@ We want to create a file in the container. This can be done by running a shell i
     
 *Q: now stop the container - does the file still exist? Start the container again and check it! Stop and remove the container, then start it again: does the file still exist?*
 
-The Postgres image uses a volume to store the data of the database. You can find the configuration in the 'docker-compose.yml' file. A container directory is mounted to the volume.
+The Postgres image uses a volume to store the data of the database. You can find the configuration in the `docker-compose.yml` file. A container directory is mounted to the volume.
 
-*Q: where is the volume ?*
+*Q: where is the volume?*
 
 ## Do it with Maven
 
