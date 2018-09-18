@@ -17,7 +17,7 @@ Some introductory usage examples for the Docker workshop.
 
 ## Dockerfile
 
-We want to build a Docker image with a Postgres database. An example `Dockerfile` can be found in the directory `dockerfile`.
+As an example, we want to build a Docker image with a Postgres database. A `Dockerfile` can be found in the directory `dockerfile`.
 
 *Q: where does the base image come from? What does the ENV command? Why multiple lines with \ ?*
 
