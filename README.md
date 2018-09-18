@@ -111,7 +111,7 @@ To store data outside of the container, host directories can be mounted or Docke
 
 We want to create a file in the container. This can be done by running a shell in the container with the 'exec' command:
 
-    docker exec -ti myimg ash
+    docker exec -ti myimage ash
     touch /test.txt
     exit
     
