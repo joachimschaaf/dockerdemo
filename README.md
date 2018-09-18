@@ -68,17 +68,17 @@ with the registry and push the image:
 
 *Q: does every tag get a new image id? How to check?*
 
-## Start a container
+## Start and Stop a container
 
 The new image can be used to start a new container. Use the `docker run` command!
 
 *Q: on which port does the Postgres database run? Try to connect! How to stop the container?*
 
-## Stop the container 
-
 A running container can be stopped with the `docker stop` command.
 
 *Q: does the container still exist after the stop command?*
+
+Stop the container and start it again, but this time with a given name, e.g. `pgsql`. 
 
 ## Using Docker-Compose
 
