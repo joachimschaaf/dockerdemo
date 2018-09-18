@@ -8,7 +8,8 @@ Some introductory usage examples for the Docker workshop.
 - Build Docker image
 - Docker hub login
 - Push image
-- Start and stop a container with docker-compose
+- Start and stop a container
+- Using docker-compose
 - Deleting stuff
 - Containers, data and volumes
 - Build with Maven
