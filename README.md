@@ -43,7 +43,7 @@ For example, get the latest Alpine Linux with
 
 *Q: how to search for Docker images? How to get a specific version?*
 
-To access our private Docker hub (or registry), a 21eecdfb4a54login is required:
+To access our private Docker hub (or registry), a login is required:
 
     docker login hub.1worldsync.de
 
