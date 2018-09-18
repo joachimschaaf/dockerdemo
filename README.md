@@ -73,6 +73,14 @@ The new image can be used to start a new container. Use the `docker run` command
 
 *Q: on which port does the Postgres database run? Try to connect! How to stop the container?*
 
+## Stop the container 
+
+A running container can be stopped with the `docker stop` command.
+
+*Q: does the container still exist after the stop command?*
+
+## Using Docker-Compose
+
 It is easier to run a container with docker-compose. A `docker-compose.yml`file is required. To start the container using docker-compose, use
 
     docker-compose up -d
@@ -80,12 +88,6 @@ It is easier to run a container with docker-compose. A `docker-compose.yml`file 
 Check the status with `docker ps` or `docker-compose ps` and check the logs.
 
 *Q: on which port is the Postgres database running? `expose`and `ports` - where's the difference? How to run the database on port 9999?*
-
-## Stop the container 
-
-A running container can be stopped with the `docker stop` command.
-
-*Q: does the container still exist after the stop command?*
 
 To stop and remove the container that was started with `docker-compose` use
 
