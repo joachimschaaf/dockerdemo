@@ -35,6 +35,8 @@ This builds a new image with the name `myimage` and tag `latest` (the default ta
 
     docker images
 
+_Hint_: you can filter the output with `docker images myima*` for example.
+
 ## Docker hub login
 
 Per default, Docker images are *pulled* from the central Docker hub (https://hub.docker.com/).
