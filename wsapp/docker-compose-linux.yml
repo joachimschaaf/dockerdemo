@@ -1,0 +1,8 @@
+version: '2'
+
+services:
+  publishing:
+    volumes:
+      # needed to have enough entropy for things like connect to oracle.
+      - "/dev/urandom:/dev/urandom"
+
