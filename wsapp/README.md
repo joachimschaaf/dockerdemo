@@ -10,4 +10,6 @@ Then create a new stack on Rancher. This can be done with the Rancher-CLI comman
 
 or in the Rancher UI by uploading the `docker-compose.yml` file.
 
+*Note*: during the first start of the stack, the Docker images have to be pulled before they can be started. Especially the Oracle image my take too long so that the Publishing installation will fail. You can pull the Oracle image manually before starting the stack.
+
 Have fun!
