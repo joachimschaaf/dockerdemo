@@ -45,6 +45,10 @@ Find the container name using rancher ps. Do a
 
 ## Copy a file into the container using the rancher client
 
+You need the Docker Container of the Database Container for this! Use the following command to find the right id:
+
+    rancher --host fra1lap6d.1worldsync.com docker ps
+
 Use the following command to copy a file to the container:
 
     rancher --host fra1lap6d.1worldsync.com docker cp README.md <container-id>:/tmp
