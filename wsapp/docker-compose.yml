@@ -3,13 +3,19 @@ version: "2"
 services:
   activemq:
     image: rmohr/activemq:5.14.3
+#    labels:
+#      io.rancher.container.pull_image: always
     hostname: activemq
     expose:
       - "8161"
       - "61616"
+    ports:
+      - "61616"
 
   elasticsearch:
     image: hub.1worldsync.de/elasticsearch/elasticsearch:1.7.5-1
+#    labels:
+#      io.rancher.container.pull_image: always
     hostname: elasticsearch
     expose:
       - "9200"
@@ -17,24 +23,28 @@ services:
 
   oracledb:
     image: hub.1worldsync.de/1worldsync/db-orcl-publishing-fmcg-medium:develop-latest
-    labels:
-      io.rancher.container.pull_image: always
+#    labels:
+#      io.rancher.container.pull_image: always
     hostname: oracledb
     expose:
       - "5500"
       - "1521"
+    ports:
+      - "1521"
 
   gpcpredict:
     image: hub.1worldsync.de/1worldsync/gpc-prediction:3.1.0
+#    labels:
+#      io.rancher.container.pull_image: always
     hostname: gpcpredict
     expose:
       - "8000"
 
   publishing:
     image: hub.1worldsync.de/1worldsync/publishing:develop
+#    labels:
+#      io.rancher.container.pull_image: always
     hostname: publishing
-    labels:
-      io.rancher.container.pull_image: always
     environment:
       - WS_PROFILE=comeu300wf-fmcg
       - WS_DB_USER=ws_data
@@ -49,6 +59,9 @@ services:
       - WS_SMTP_FROM=noreply@1worldsync.com
       - WS_SMTP_STARTTLS=true
     expose:
+      - "8080"
+      - "22"
+    ports:
       - "8080"
       - "22"
     volumes:
