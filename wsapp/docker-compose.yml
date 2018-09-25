@@ -26,6 +26,8 @@ services:
 #    labels:
 #      io.rancher.container.pull_image: always
     hostname: oracledb
+    command: "/opt/oracle/runOracle.sh" 
+    entrypoint: ""
     expose:
       - "5500"
       - "1521"
