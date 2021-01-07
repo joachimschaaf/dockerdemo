@@ -48,7 +48,7 @@ For example, get the latest Alpine Linux with
 
 To access our private Docker hub (or registry), a login is required:
 
-    docker login hub.1worldsync.de
+    docker login hub.atrify.com
 
 If you just want to download images, the 'readonly' user is sufficient, but if
 you want to *push* (upload) the images you have built you have to login with
@@ -65,8 +65,8 @@ Tag the image with your Linux username so we can all push our own image. Then ta
 with the registry and push the image:
 
     docker tag myimage demo-<My_Userid>/myimage
-    docker tag demo-<My_Userid>/myimage hub.1worldsync.de/demo-<My_Userid>/myimage
-    docker push hub.1worldsync.de/demo-<My_Userid>/myimage
+    docker tag demo-<My_Userid>/myimage hub.atrify.com/demo-<My_Userid>/myimage
+    docker push hub.atrify.com/demo-<My_Userid>/myimage
 
 *Q: does every tag get a new image id? How to check?*
 
